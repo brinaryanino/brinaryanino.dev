@@ -189,7 +189,7 @@ export default function Home() {
 
       {/* 1. FIXED MINIMAL HEADER */}
       <header className="sticky top-0 z-50 w-full border-b border-white/[0.04] bg-[#0a0a0c]/60 backdrop-blur-md transition-all duration-300">
-        <div className="mx-auto max-w-7xl px-6 h-16 flex items-center justify-between">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 h-16 flex items-center justify-between">
           {/* Logo / Initials */}
           <a href="#" className="flex items-center gap-3 group">
             <span className="font-serif text-xl tracking-widest font-black text-white flex items-center gap-1">
@@ -297,7 +297,7 @@ export default function Home() {
       <main className="mx-auto max-w-7xl px-6 relative z-10">
         
         {/* 2. THE HERO SECTION */}
-        <section className="relative py-24 md:py-40 flex flex-col lg:grid lg:grid-cols-12 lg:gap-12 items-center justify-between border-b border-white/[0.04]">
+        <section className="relative py-12 md:py-32 flex flex-col lg:grid lg:grid-cols-12 lg:gap-12 items-center justify-between border-b border-white/[0.04]">
           {/* Left Text Block */}
           <div className="lg:col-span-7 flex flex-col items-start gap-8 z-10 w-full">
             <div className="flex items-center gap-3 px-3 py-1 bg-white/[0.02] border border-white/5 rounded-full">
@@ -307,7 +307,7 @@ export default function Home() {
 
             <div className="flex flex-col gap-4">
               <span className="font-mono text-xs text-zinc-500 uppercase tracking-widest">// COGNITIVE SUBJECT</span>
-              <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight font-black leading-[0.9] text-white">
+              <h1 className="font-serif text-3xl sm:text-5xl md:text-7xl lg:text-8xl tracking-tight font-black leading-[0.9] text-white break-words">
                 BRINARYA NINO <br />
                 <span className={`font-light italic text-transparent bg-clip-text bg-gradient-to-r ${accent === "rose" ? "from-rose-500 to-rose-900" : accent === "amber" ? "from-amber-400 to-amber-800" : "from-slate-200 to-slate-500"}`}>
                   SUDHIPURWA
@@ -337,7 +337,7 @@ export default function Home() {
 
           {/* Right Console Block */}
           <div className="lg:col-span-5 w-full mt-16 lg:mt-0 z-10">
-            <div className="border border-white/10 bg-[#0c0c0f] rounded-none p-5 flex flex-col gap-4 relative overflow-hidden group shadow-2xl">
+            <div className="border border-white/10 bg-[#0c0c0f] rounded-none p-4 md:p-5 flex flex-col gap-4 relative overflow-hidden group shadow-2xl">
               {/* Corner Runic Accents */}
               <div className="absolute top-0 left-0 w-2.5 h-2.5 border-t border-l border-white/20 group-hover:border-rose-600 transition-colors duration-300"></div>
               <div className="absolute top-0 right-0 w-2.5 h-2.5 border-t border-r border-white/20 group-hover:border-rose-600 transition-colors duration-300"></div>
@@ -360,7 +360,7 @@ export default function Home() {
               {/* Console Logs */}
               <div 
                 id="console-logs"
-                className="h-48 overflow-y-auto font-mono text-[11px] leading-relaxed flex flex-col gap-2 scrollbar-thin select-text"
+                className="h-36 md:h-48 overflow-y-auto font-mono text-[11px] leading-relaxed flex flex-col gap-2 scrollbar-thin select-text"
               >
                 {consoleLogs.map((log, i) => (
                   <div key={i} className="flex gap-2">
@@ -428,8 +428,8 @@ export default function Home() {
         </section>
 
         {/* 3. THE ARTIFACTS GRID (Selected Work) */}
-        <section id="artifacts" className="py-24 border-b border-white/[0.04]">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <section id="artifacts" className="py-16 md:py-24 border-b border-white/[0.04]">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 md:mb-16 gap-6">
             <div className="flex flex-col gap-3">
               <span className={`font-mono text-xs uppercase tracking-[0.2em] ${theme.accent}`}>
                 01 // SELECT ARTIFACTS
@@ -444,10 +444,10 @@ export default function Home() {
           </div>
 
           {/* Asymmetric Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6">
             
             {/* Card 1: Wide Layout */}
-            <div className="md:col-span-8 group relative border border-white/5 bg-[#0d0d10] p-8 md:p-10 flex flex-col justify-between min-h-[380px] hover:border-rose-900/40 transition-all duration-500 ease-out hover:scale-[1.005]">
+            <div className="md:col-span-8 group relative border border-white/5 bg-[#0d0d10] p-5 sm:p-8 md:p-10 flex flex-col justify-between min-h-[380px] hover:border-rose-900/40 transition-all duration-500 ease-out hover:scale-[1.005]">
               {/* Corner Runic Accents */}
               <div className={`absolute top-0 left-0 w-2 h-2 border-t border-l border-white/0 ${theme.cornerBorder} duration-300`}></div>
               <div className={`absolute top-0 right-0 w-2 h-2 border-t border-r border-white/0 ${theme.cornerBorder} duration-300`}></div>
@@ -492,7 +492,7 @@ export default function Home() {
             </div>
 
             {/* Card 2: Narrow Layout */}
-            <div className="md:col-span-4 group relative border border-white/5 bg-[#0d0d10] p-8 md:p-10 flex flex-col justify-between min-h-[380px] hover:border-rose-900/40 transition-all duration-500 ease-out hover:scale-[1.005]">
+            <div className="md:col-span-4 group relative border border-white/5 bg-[#0d0d10] p-5 sm:p-8 md:p-10 flex flex-col justify-between min-h-[380px] hover:border-rose-900/40 transition-all duration-500 ease-out hover:scale-[1.005]">
               <div className={`absolute top-0 left-0 w-2 h-2 border-t border-l border-white/0 ${theme.cornerBorder} duration-300`}></div>
               <div className={`absolute top-0 right-0 w-2 h-2 border-t border-r border-white/0 ${theme.cornerBorder} duration-300`}></div>
               <div className={`absolute bottom-0 left-0 w-2 h-2 border-b border-l border-white/0 ${theme.cornerBorder} duration-300`}></div>
@@ -533,7 +533,7 @@ export default function Home() {
             </div>
 
             {/* Card 3: Narrow Layout */}
-            <div className="md:col-span-4 group relative border border-white/5 bg-[#0d0d10] p-8 md:p-10 flex flex-col justify-between min-h-[380px] hover:border-rose-900/40 transition-all duration-500 ease-out hover:scale-[1.005]">
+            <div className="md:col-span-4 group relative border border-white/5 bg-[#0d0d10] p-5 sm:p-8 md:p-10 flex flex-col justify-between min-h-[380px] hover:border-rose-900/40 transition-all duration-500 ease-out hover:scale-[1.005]">
               <div className={`absolute top-0 left-0 w-2 h-2 border-t border-l border-white/0 ${theme.cornerBorder} duration-300`}></div>
               <div className={`absolute top-0 right-0 w-2 h-2 border-t border-r border-white/0 ${theme.cornerBorder} duration-300`}></div>
               <div className={`absolute bottom-0 left-0 w-2 h-2 border-b border-l border-white/0 ${theme.cornerBorder} duration-300`}></div>
@@ -574,7 +574,7 @@ export default function Home() {
             </div>
 
             {/* Card 4: Wide Layout */}
-            <div className="md:col-span-8 group relative border border-white/5 bg-[#0d0d10] p-8 md:p-10 flex flex-col justify-between min-h-[380px] hover:border-rose-900/40 transition-all duration-500 ease-out hover:scale-[1.005]">
+            <div className="md:col-span-8 group relative border border-white/5 bg-[#0d0d10] p-5 sm:p-8 md:p-10 flex flex-col justify-between min-h-[380px] hover:border-rose-900/40 transition-all duration-500 ease-out hover:scale-[1.005]">
               <div className={`absolute top-0 left-0 w-2 h-2 border-t border-l border-white/0 ${theme.cornerBorder} duration-300`}></div>
               <div className={`absolute top-0 right-0 w-2 h-2 border-t border-r border-white/0 ${theme.cornerBorder} duration-300`}></div>
               <div className={`absolute bottom-0 left-0 w-2 h-2 border-b border-l border-white/0 ${theme.cornerBorder} duration-300`}></div>
@@ -618,7 +618,7 @@ export default function Home() {
         </section>
 
         {/* 4. THE CHRONICLES (Timeline/Skills) */}
-        <section id="chronicles" className="py-24 border-b border-white/[0.04]">
+        <section id="chronicles" className="py-16 md:py-24 border-b border-white/[0.04]">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
             
             {/* Left Column: Timeline (Temporal Pathway) */}
@@ -633,12 +633,14 @@ export default function Home() {
               </div>
 
               {/* Timeline Items */}
-              <div className="flex flex-col border-l border-white/5 pl-6 gap-10 relative">
+              <div className="flex flex-col gap-10 relative pl-6 md:pl-8">
+                {/* Vertical Line */}
+                <div className="absolute left-0 top-1.5 bottom-1.5 w-[1px] bg-white/5"></div>
                 
                 {/* Milestone 1 */}
                 <div className="relative group">
                   {/* Timeline bullet indicator */}
-                  <div className="absolute -left-[30px] top-1.5 w-2 h-2 rounded-full bg-zinc-800 group-hover:bg-rose-700 transition-colors duration-300"></div>
+                  <div className={`absolute left-0 -translate-x-1/2 top-1.5 w-2 h-2 rounded-full bg-zinc-800 group-hover:${accent === "rose" ? "bg-rose-600" : accent === "amber" ? "bg-amber-500" : "bg-slate-400"} transition-colors duration-300`}></div>
                   
                   <span className="font-mono text-xs text-zinc-500 block mb-2">AUG 2024 — PRESENT</span>
                   <h3 className="font-serif text-xl text-zinc-100 group-hover:text-white transition-colors">
@@ -652,7 +654,7 @@ export default function Home() {
 
                 {/* Milestone 2 */}
                 <div className="relative group">
-                  <div className="absolute -left-[30px] top-1.5 w-2 h-2 rounded-full bg-zinc-800 group-hover:bg-rose-700 transition-colors duration-300"></div>
+                  <div className={`absolute left-0 -translate-x-1/2 top-1.5 w-2 h-2 rounded-full bg-zinc-800 group-hover:${accent === "rose" ? "bg-rose-600" : accent === "amber" ? "bg-amber-500" : "bg-slate-400"} transition-colors duration-300`}></div>
                   
                   <span className="font-mono text-xs text-zinc-500 block mb-2">INTERNSHIP // 2024</span>
                   <h3 className="font-serif text-xl text-zinc-100 group-hover:text-white transition-colors">
@@ -771,7 +773,7 @@ export default function Home() {
         </section>
 
         {/* 5. THE RITUAL (Footer Contact) */}
-        <section id="ritual" className="py-24 flex flex-col items-center text-center gap-12">
+        <section id="ritual" className="py-16 md:py-24 flex flex-col items-center text-center gap-12">
           
           <div className="flex flex-col gap-4 max-w-xl">
             <span className={`font-mono text-xs uppercase tracking-[0.25em] ${theme.accent}`}>
@@ -786,10 +788,10 @@ export default function Home() {
           </div>
 
           {/* Large Animated Email Link */}
-          <div className="my-6">
+          <div className="my-6 w-full px-4 overflow-hidden">
             <a 
               href="mailto:Brinaryanino09@gmail.com"
-              className={`font-serif text-3xl sm:text-5xl md:text-6xl tracking-wide text-white transition-colors duration-300 hover:text-white link-underline-slide pb-2`}
+              className={`font-serif text-xl sm:text-3xl md:text-5xl lg:text-6xl tracking-wide text-white transition-colors duration-300 hover:text-white link-underline-slide pb-2 break-all`}
             >
               Brinaryanino09@gmail.com
             </a>
