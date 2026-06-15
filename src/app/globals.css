@@ -1,26 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;700;900&family=Inter:wght@300;400;500;600;700&display=swap');
+
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --font-serif: "Cinzel", serif;
+  --font-sans: "Inter", sans-serif;
+  
+  --color-grim-bg: #0a0a0c;
+  --color-grim-crimson: #be123c; /* rose-700 */
+  --color-grim-gold: rgba(217, 119, 6, 0.8); /* amber-600/80 */
+  --color-grim-silver: #e2e8f0; /* spectral silver */
+  
+  --animate-border-glow: border-glow 2s ease-in-out infinite alternate;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@keyframes border-glow {
+  0% {
+    border-color: rgba(255, 255, 255, 0.05);
+  }
+  100% {
+    border-color: rgba(190, 18, 60, 0.4);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+:root {
+  --background: #0a0a0c;
+  --foreground: #e2e8f0;
+}
+
+html, body {
+  background: #0a0a0c;
+  color: #e2e8f0;
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+}
+
+/* Custom low-profile grimoire scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0c;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(190, 18, 60, 0.3);
+}
+
+/* Custom text selection */
+::selection {
+  background: rgba(190, 18, 60, 0.3);
+  color: #ffffff;
+}
+
+/* Underline slide animation for links */
+.link-underline-slide {
+  position: relative;
+}
+.link-underline-slide::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: #be123c; /* rose-700 */
+  transform-origin: bottom right;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.link-underline-slide:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
