@@ -132,6 +132,16 @@ export default function Home() {
     }
   }, [consoleLogs]);
 
+  // Mouse position tracker for trailing glow (CSS variables for zero React re-renders)
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      document.documentElement.style.setProperty("--mouse-x", `${e.clientX}px`);
+      document.documentElement.style.setProperty("--mouse-y", `${e.clientY}px`);
+    };
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, []);
+
   // Dynamic Theme Styling Tokens mapping
   const theme = {
     rose: {
@@ -174,6 +184,18 @@ export default function Home() {
 
   return (
     <div className="relative min-h-screen bg-[#0a0a0c] overflow-x-hidden font-sans select-none selection:bg-rose-900/30 selection:text-white">
+      
+      {/* Mouse Trailing Glow (Tied to CSS Variables for GPU-accelerated movement) */}
+      <div 
+        className="pointer-events-none fixed inset-0 z-0 transition-colors duration-500"
+        style={{
+          background: `radial-gradient(600px circle at var(--mouse-x, -999px) var(--mouse-y, -999px), ${
+            accent === "rose" ? "rgba(190, 18, 60, 0.05)" : 
+            accent === "amber" ? "rgba(217, 119, 6, 0.05)" : 
+            "rgba(148, 163, 184, 0.03)"
+          }, transparent 70%)`
+        }}
+      />
       
       {/* 0. ARCHITECTURAL GRID LINES (Subtle background alignment helpers) */}
       <div className="absolute inset-0 pointer-events-none z-0 flex justify-between px-4 sm:px-12 md:px-24">
